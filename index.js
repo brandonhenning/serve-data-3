@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const port = process.env.PORT || 3000
 
 const app = express() 
 app.use(cors())
@@ -8,27 +9,27 @@ const students = [{
     id: 1,
     firstName: 'Alice',
     lastName: 'Zephy',
-    homeTown: 'Seattle'
+    hometown: 'Seattle'
 }, {
     id: 2,
     firstName: 'Bob',
     lastName: 'Yellow',
-    homeTown: 'Vancouver'
+    hometown: 'Vancouver'
 }, {
     id: 3,
     firstName: 'Claire',
     lastName: 'Xylitol',
-    homeTown: 'Toledo'
+    hometown: 'Toledo'
 }, {
     id: 4,
     firstName: 'Daniel',
     lastName: 'Winston',
-    homeTown: 'Akron'
+    hometown: 'Akron'
 }, {
     id: 5,
     firstName: 'Edina',
     lastName: 'Veritas',
-    homeTown: 'Wichita'
+    hometown: 'Wichita'
 }]
 
 function findById (data, id) {
@@ -56,4 +57,4 @@ app.get('/:id', function (request, response) {
     response.json({data: record})
 })
 
-app.listen(9000)
+app.listen(port)
